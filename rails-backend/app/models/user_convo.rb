@@ -1,2 +1,0 @@
-class UserConvo < ApplicationRecord
-end
