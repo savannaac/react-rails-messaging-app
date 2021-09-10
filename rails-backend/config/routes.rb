@@ -7,7 +7,10 @@ Rails.application.routes.draw do
         :sessions => "api/#{version}/users/sessions",
         :passwords => "api/#{version}/users/passwords"
       }
-      # resources :
+      
+      resources :messages
+      resources :conversations
+      resources :participations
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
