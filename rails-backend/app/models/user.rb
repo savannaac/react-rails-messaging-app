@@ -11,4 +11,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many :participations
   has_many :conversations, through: :participations
+
+  validates :username, uniqueness: true
 end
