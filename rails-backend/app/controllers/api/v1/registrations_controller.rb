@@ -1,5 +1,4 @@
 class Api::V1::RegistrationsController < Devise::RegistrationsController
-# class Users::RegistrationsController < Devise::RegistrationsController
     respond_to :json 
 
     private
