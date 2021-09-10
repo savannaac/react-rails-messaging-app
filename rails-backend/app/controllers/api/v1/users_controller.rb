@@ -3,7 +3,6 @@ class Api::V1::UsersController < ApplicationController
 
     def index
         users = User.all.order("created_at DESC")
-
         render json: users
     end
 
@@ -12,11 +11,14 @@ class Api::V1::UsersController < ApplicationController
 
         if user.save
             session[:user_id] = user.id 
-            
             render json: user, status: 200
         else 
             render json: { errors: user.errors.full_messages.join(" ") }
         end
+    end
+
+    def new
+        user = User.new
     end
 
     def show
