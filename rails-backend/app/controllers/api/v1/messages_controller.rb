@@ -2,16 +2,16 @@ class Api::V1::MessagesController < ApplicationController
     before_action :set_message, only: [:show, :destroy]
 
     def index
-        messages = Message.all.order("updated_at DESC")
+        # messages = Message.all.order("updated_at DESC")
+        # render json: messages
+        messages = conversation.messages
         render json: messages
     end
 
-    def show
-    end
-
-    def new
-        message = Message.new
-    end
+    # def new
+    #     message = Message.new
+    #     # message = conversation.messages.new
+    # end
 
     def create
         # puts params.inspect
@@ -38,6 +38,6 @@ class Api::V1::MessagesController < ApplicationController
     end
 
     def message_params
-        params.require(:message).permit(:user_id, :body)
+        params.require(:message).permit(:user_id, :conversation_id, :body)
     end
-  end
+end

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
   has_many :messages
-  has_many :participations
+  has_many :participations, dependent: :destroy
   has_many :conversations, through: :participations
 
   validates :username, uniqueness: true

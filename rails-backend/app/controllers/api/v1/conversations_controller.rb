@@ -1,23 +1,19 @@
 class Api::V1::ConversationsController < ApplicationController
-    before_action :set_conversation, only: [:show, :edit, :update, :destroy]
+    before_action :set_conversation, only: [:show, :create, :edit, :update, :destroy]
 
     def index
-        conversations = Conversation.all.order("updated_at DESC")
+        # conversations = Conversation.all.order("updated_at DESC")
+        conversations = current_user.conversations
         render json: conversations
     end
 
     def show
-    end
-
-    def new
-        conversation = Conversation.new
     end
     
     def edit
     end
 
     def create
-        # puts params.inspect
         conversation = Conversation.new
 
         if conversation.save
