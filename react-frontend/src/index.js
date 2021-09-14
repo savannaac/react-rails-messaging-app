@@ -1,21 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// const Home = () => {
-//   return (
-//     <div>
-//       <h1>Home</h1>
-//     </div>
-//   );
-// };
+const Home = () => {
+  return (
+    <div>
+      <h1>App name</h1>
+    </div>
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
    {/* <Router>
      <Route path="/" component={Home} />
    </Router> */}
