@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'current_user/index'
   # devise_for :users
   namespace :api do
     namespace :v1 do
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
       resources :participations
 
       get "/user-data", to: "users#show"
+      get "/current_user", to: "current_user#index"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
