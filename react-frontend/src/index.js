@@ -5,22 +5,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const Home = () => {
-  return (
-    <div>
-      <h1>App name</h1>
-    </div>
-  );
-};
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <App />
     </Router>
-   {/* <Router>
-     <Route path="/" component={Home} />
-   </Router> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
