@@ -1,5 +1,10 @@
 // import React, { useState } from "react";
 import React from "react";
+// import ReactDOM from "react-dom";
+// import { Provider } from "react-redux";
+// import { createStoreHook, applyMiddleware } from "redux";
+// import thunk from "redux-thunk";
+
 // import { connect } from "react-redux";
 // import { fetchUsers } from "/actions/fetchUsers"
 
@@ -13,8 +18,17 @@ export default class Signup extends React {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        });
     };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        fetch("http://127.0.0.1:3000/api/v1/users", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(this.state)
+        });
+    };//
 
     render() {
         return (
