@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :participations, dependent: :destroy
   has_many :conversations, through: :participations
 
-  validates :username, uniqueness: true
+  validates :username, uniqueness: { case_sensitive: false }
 end
