@@ -16,7 +16,7 @@ export default class Login extends React.Component {
         e.preventDefault();
         console.log(this.state)
         return fetch("http://127.0.0.1:3000/api/v1/users", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -26,6 +26,13 @@ export default class Login extends React.Component {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            // localStorage.setItem("token", data.jwt)
+            // // this.handleLogin(data.user)
+            // // this.setUser(data)
+            // this.setState({
+            //     email: "",
+            //     password: ""
+            // })
         })
     }
 

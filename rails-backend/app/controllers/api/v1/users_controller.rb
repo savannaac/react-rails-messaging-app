@@ -12,6 +12,7 @@ class Api::V1::UsersController < ApplicationController
         if user.save
             session[:user_id] = user.id 
             render json: user, status: 200
+            # render json: { user: user, jwt: token } status: 200
         else 
             render json: { errors: user.errors.full_messages.join(" ") }
         end
