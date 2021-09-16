@@ -45,6 +45,7 @@ export default class Messages extends React.Component {
         return (
             <div className="messages-container">
                 <ul className="message-list">
+                    <button className="message-back-button"></button>
                     {messages.map(message => {
                         return (
                             <li>
