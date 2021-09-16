@@ -26,6 +26,9 @@ export default class Login extends React.Component {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+
+            const jwt = data.headers.get("Authorization").split("Bearer")[1];
+            localStorage.setItem("jwt", jwt)
             // localStorage.setItem("token", data.jwt)
             // // this.handleLogin(data.user)
             // // this.setUser(data)
@@ -39,15 +42,18 @@ export default class Login extends React.Component {
     render() {
         return (
             <div>
-                <h1>App Name</h1>
+                <h1>ChitChat</h1>
+
+                <div className="signup-login-form-card">
                     <h2>login</h2>
         
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="email" placeholder="email" value={this.state.username} onChange={this.handleChange} />
-                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+                    <form className="signup-login-form" onSubmit={this.handleSubmit}>
+                        <input className="input-field" type="text" name="email" placeholder="email" value={this.state.username} onChange={this.handleChange} />
+                        <input className="input-field" type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
         
-                    <button type="submit">log in</button>
-                </form>
+                        <button className="signup-login-button" type="submit">log in</button>
+                    </form>
+                </div>
             </div>
         );
     };

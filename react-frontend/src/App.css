@@ -1,3 +1,7 @@
+body {
+  background-color: #FEBE89
+}
+
 h1 {
   color: #FFFFFF;
   font-family: futura;
@@ -10,8 +14,10 @@ h2 {
   font-weight: 700;
 }
 
-body {
-  background-color: #FEBE89
+ul.message-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -53,7 +59,7 @@ body {
   color: #61dafb;
 }
 
-.signup-form-card {
+.signup-login-form-card {
   background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -62,14 +68,14 @@ body {
   padding: 1rem;
 }
 
-.signup-form {
+.signup-login-form {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
 
-.signup-button {
+.signup-login-button {
   border-radius: 20px;
   padding: 1rem;
   width: 40%;
@@ -83,3 +89,51 @@ body {
   margin-bottom: 1rem;
   padding: 1rem;
 }
+
+.messages-container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+  0 10px 10px rgba(0,0,0,0.22);
+  margin: 10%;
+  padding: 2rem;
+  text-align: left;
+  width: 40%
+;}
+
+.message-sender {
+  color: #C25E0B;
+  font-size: .8rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.message-body {
+  background-color: #4D5656;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-bottom: .5rem;
+  padding: .6rem;
+  width: auto;
+}
+
+.message-submit-container {
+  margin-top: 5%;
+}
+
+.message-input-field {
+  border-color: #AAB7B8;
+  border-radius: 5px;
+  margin-right: .3rem;
+  padding: .3rem;
+  width: 87%;
+}
+
+.message-send-button {
+  border-radius: 20px;
+  padding: .1rem;
+  width: 7%;
+  margin: auto;
+}
+
+
