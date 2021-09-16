@@ -1,8 +1,9 @@
 h1 {
+  color: #FFFFFF;
   font-family: futura;
+  font-size: 3.5rem;
   font-style: italic;
   font-weight: bolder;
-  font-size: 3.5rem;
 }
 
 h2 {
@@ -10,7 +11,7 @@ h2 {
 }
 
 body {
-  background-color: #ff9966;
+  background-color: #FEBE89
 }
 
 .App {
@@ -25,6 +26,15 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -59,13 +69,6 @@ body {
   padding: 2rem;
 }
 
-.input-field {
-  background-color: #ededed;
-  border: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
 .signup-button {
   border-radius: 20px;
   padding: 1rem;
@@ -74,12 +77,9 @@ body {
   text-transform: uppercase;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-field {
+  background-color: #ededed;
+  border: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }

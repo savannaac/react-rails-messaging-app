@@ -6,7 +6,7 @@ ruby '2.6.1'
 gem "active_model_serializers"
 gem "devise", github: "heartcombo/devise"
 gem "devise-jwt"
-# gem "jwt"
+gem "jwt"
 gem "rack-cors"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
