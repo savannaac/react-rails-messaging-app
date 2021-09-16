@@ -20,6 +20,12 @@ export default class Messages extends React.Component {
     //     body: ""
     // }
 
+    // handleClick = (e) => {
+    //     e.preventDefault();
+    //     let route = ;
+    //     history.push(route)
+    // }
+
     handleChange = (e) => {
         this.setState({
             [e.target.body]: e.target.value
@@ -45,7 +51,7 @@ export default class Messages extends React.Component {
         return (
             <div className="messages-container">
                 <ul className="message-list">
-                    <button className="message-back-button"></button>
+                    <button className="message-back-button" onClick={this.handleClick}>⇠</button>
                     {messages.map(message => {
                         return (
                             <li>

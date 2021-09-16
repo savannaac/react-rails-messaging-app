@@ -98,8 +98,16 @@ ul.message-list {
   margin: 10%;
   padding: 2rem;
   text-align: left;
-  width: 40%
-;}
+  width: 40%;
+}
+
+.message-back-button {
+  color: #077383;
+  background-color: #FFFFFF;
+  border: 0;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+}
 
 .message-sender {
   color: #C25E0B;
@@ -131,6 +139,7 @@ ul.message-list {
 
 .message-send-button {
   border-radius: 20px;
+  font-size: 1.1rem;
   padding: .1rem;
   width: 7%;
   margin: auto;
