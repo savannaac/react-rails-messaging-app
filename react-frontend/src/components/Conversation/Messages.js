@@ -22,7 +22,7 @@ export default class Messages extends React.Component {
 
     // handleClick = (e) => {
     //     e.preventDefault();
-    //     let route = ;
+    //     let route = "/conversations";
     //     history.push(route)
     // }
 
@@ -49,10 +49,10 @@ export default class Messages extends React.Component {
         const messages = this.state;
 
         return (
-            <div className="messages-container">
+            <div className="app-container">
                 <ul className="message-list">
 
-                    <button className="message-back-button" onClick={this.handleClick}>⇠</button>
+                    <button className="back-button" onClick={this.handleClick}>⇠</button>
 
                         {messages.map(message => {
                             return (
