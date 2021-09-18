@@ -109,6 +109,10 @@ ul.message-list {
   margin-top: -1rem;
 }
 
+.message-back-button:hover {
+  color: #C25E0B;  
+}
+
 .message-sender {
   color: #C25E0B;
   font-size: .8rem;
