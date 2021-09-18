@@ -126,8 +126,21 @@ a.conversations {
 }
 
 .conversation {
-  border-bottom: .1rem solid #F7F7F7;
+  border-bottom: .1rem solid #EAEAEA;
   margin-bottom: .7rem;
+}
+
+.message-preview {
+  margin-left: .4rem;
+  font-size: .9rem;
+}
+
+.message-preview-date {
+  color: #839192;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  margin-left: .1rem;
+  text-align: right;
 }
 
 .message-sender {

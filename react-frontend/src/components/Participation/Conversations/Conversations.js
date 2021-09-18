@@ -5,19 +5,19 @@ export default class Conversations extends React.Component {
         {
             userId: "Ziggy",
             name: "<3",
-            preview: "I love you.",
+            preview: "I love you. I miss you. I can't wait to see you",
             updatedAt: "everyday"
         },
         {
             userId: "shawn",
             name: "title",
-            preview: "frends",
+            preview: "frends frends frends",
             updatedAt: "2day"
         },
         {
             userId: "amanda",
             name: "title",
-            preview: "friends",
+            preview: "friends friends friends",
             updatedAt: "today"
         }
     ]
@@ -29,7 +29,10 @@ export default class Conversations extends React.Component {
             <div className="app-container">
                 <ul className="conversations-list">
 
-                <button className="back-button" onClick={this.handleClick}>⇠</button>
+                <div className="buttons-row">
+                    <button className="back-button" onClick={this.handleClick}>⇠</button>
+                    <button className="add-convo-button">+</button>
+                </div>
 
                 {conversations.map(conversation => {
                     return (
