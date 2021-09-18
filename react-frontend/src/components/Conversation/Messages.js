@@ -52,15 +52,19 @@ export default class Messages extends React.Component {
             <div className="app-container">
                 <ul className="message-list">
 
-                    <button className="back-button" onClick={this.handleClick}>⇠</button>
+                    <div className="buttons-row">
+                        <button className="back-button" onClick={this.handleClick}>⇠</button>
+                    </div>
 
-                        {messages.map(message => {
-                            return (
-                                <li>
-                                    <div className="message-sender-list">{message.userId}</div>
-                                </li>
-                            );
-                        })}
+                       <div className="participants">
+                            {messages.map(message => {
+                                return (
+                                    <li>
+                                        <div className="message-sender-list">{message.userId}</div>
+                                    </li>
+                                );
+                            })}
+                        </div>
 
                     {messages.map(message => {
                         return (

@@ -71,6 +71,8 @@ a.conversations {
   color: #61dafb;
 }
 
+/* registration */
+
 .signup-login-form-card {
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -102,6 +104,13 @@ a.conversations {
   padding: 1rem;
 }
 
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
 .back-button {
   color: #077383;
   background-color: #FFFFFF;
@@ -114,6 +123,18 @@ a.conversations {
   color: #C25E0B;  
 }
 
+.add-convo-button:hover {
+  color: #C25E0B;  
+}
+
+.add-convo-button {
+  color: #077383;
+  background-color: #FFFFFF;
+  border: 0;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+}
+
 .app-container {
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -124,6 +145,8 @@ a.conversations {
   text-align: left;
   width: 40%;
 }
+
+/* conversations component  */
 
 .conversation {
   border-bottom: .1rem solid #EAEAEA;
@@ -141,6 +164,16 @@ a.conversations {
   margin-bottom: .5rem;
   margin-left: .1rem;
   text-align: right;
+}
+
+/* messages component  */
+
+.participants {
+  color: #C25E0B;
+  font-size: .9rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .message-sender {
