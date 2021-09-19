@@ -1,5 +1,6 @@
 body {
-  background-color: #FEBE89
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(219,241,249,1) 100%);
 }
 
 h1 {
@@ -158,6 +159,24 @@ a.conversations {
   padding: 2rem;
   text-align: left;
   width: 40%;
+}
+
+/* profile component  */
+.profile-container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+  0 10px 10px rgba(0,0,0,0.22);
+  margin: 10%;
+  /* opacity: 0.5; */
+  padding: 2rem;
+  text-align: left;
+  width: 20%;
+}
+
+.profile {
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* conversations component  */

@@ -14,13 +14,13 @@ export default class Profile extends React.Component {
 
     render() {
         return (
-            <div className="app-container">
+            <div className="profile-container">
 
                 <div className="buttons-row">
                     <button className="exit-button" onClick={this.handleClick}>x</button>
                 </div>
 
-                <div>
+                <div className="profile">
                     <div className="profile-username">{this.state.username}</div>
                     <div className="profile-createdAt">member since: {this.state.createdAt}</div>
                 </div>
