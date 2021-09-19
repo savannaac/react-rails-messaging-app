@@ -27,12 +27,6 @@ ul.conversations-list {
   padding: 0;
 }
 
-a.conversations {
-  color: #C25E0B;
-  font-weight: 600;
-  text-decoration: none;
-}
-
 .App {
   text-align: center;
 }
@@ -115,10 +109,10 @@ a.conversations {
 }
 
 .back-button {
-  color: #077383;
-  background-color: #FFFFFF;
+  background-color: #000000;
+  color: #D6FF10;
   border: 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-top: -1rem;
 }
 
@@ -143,10 +137,10 @@ a.conversations {
 }
 
 .add-convo-button {
-  color: #077383;
-  background-color: #FFFFFF;
+  background-color: #000000;
+  color: #D6FF10;
   border: 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-top: -1rem;
 }
 
@@ -156,6 +150,7 @@ a.conversations {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
   0 10px 10px rgba(0,0,0,0.22);
   margin: 10%;
+  opacity: .75;
   padding: 2rem;
   text-align: left;
   width: 40%;
@@ -211,7 +206,15 @@ p.profile-updatedAt {
   margin-bottom: .7rem;
 }
 
+a.conversations {
+  color: #FF9D00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .message-preview {
+  color: #FFFFFF;
+  margin-bottom: .1rem;
   margin-left: .4rem;
   font-size: .9rem;
 }
@@ -226,8 +229,14 @@ p.profile-updatedAt {
 
 /* messages component  */
 
+.messages-icon {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+}
+
 .participants {
-  color: #C25E0B;
+  color: #D6FF10;
   font-size: .9rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -235,23 +244,32 @@ p.profile-updatedAt {
 }
 
 .message-sender {
-  color: #C25E0B;
+  color: #FF9D00;
   font-size: .8rem;
   font-weight: bold;
+  margin-bottom: .2rem;;
   margin-left: 1rem;
 }
 
 .message-body {
-  background-color: #839192;
+  background-color: #4D5656;
   border-radius: 20px;
   color: #FFFFFF;
-  margin-bottom: .5rem;
+  margin-bottom: .1rem;
   padding: .6rem;
   width: auto;
 }
 
+.message-timestamp {
+  color: #AAB7B8;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  margin-left: 1rem;
+}
+
 .message-submit-container {
-  margin-top: 5%;
+  margin-bottom: 7%;
+  margin-top: 10%;
 }
 
 .message-input-field {

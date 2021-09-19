@@ -4,15 +4,18 @@ export default class Messages extends React.Component {
     state = [
         {
             userId: "no-name says:",
-            body: "testing - 1, 2, 3"
+            body: "testing - 1, 2, 3",
+            createdAt: "1PM"
         },
         {
             userId: "yes-name says:",
-            body: "pls work pls work pls work"
+            body: "pls work pls work pls work",
+            createdAt: "1:05PM"
         },
         {
             userId: "user-3 says:",
-            body: "OH MY GAWD"
+            body: "OH MY GAWD",
+            createdAt: "1:10PM"
         }
     ]
 
@@ -56,22 +59,24 @@ export default class Messages extends React.Component {
                         <button className="back-button" onClick={this.handleClick}>⇠</button>
                     </div>
 
-                       <div className="participants">
-                            {messages.map(message => {
-                                return (
-                                    <li>
-                                        <div className="message-sender-list">{message.userId}</div>
-                                    </li>
-                                );
-                            })}
-                        </div>
+                    <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" />
+
+                    <div className="participants">
+                        {messages.map(message => {
+                            return (
+                                <li>
+                                    <div className="message-sender-list">{message.userId}</div>
+                                </li>
+                            );
+                        })}
+                    </div>
 
                     {messages.map(message => {
                         return (
                             <li>
                                 <div className="message-sender">{message.userId}</div>
-
                                 <div className="message-body">{message.body}</div>
+                                <div className="message-timestamp">{message.createdAt}</div>
                             </li>
                         );
                     })}
