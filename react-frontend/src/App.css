@@ -201,6 +201,13 @@ p.profile-updatedAt {
 
 /* conversations component  */
 
+.convo-icon {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 20%;
+}
+
 .conversation {
   border-bottom: .1rem solid #EAEAEA;
   margin-bottom: .7rem;

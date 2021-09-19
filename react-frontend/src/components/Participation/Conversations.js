@@ -34,6 +34,8 @@ export default class Conversations extends React.Component {
                     <button className="add-convo-button">+</button>
                 </div>
 
+                <img className="convo-icon" src="https://i.ibb.co/RH8B5Qk/Screen-Shot-2021-09-19-at-1-24-24-AM.png" alt="conversation-icon" />
+
                 {conversations.map(conversation => {
                     return (
                         <li>

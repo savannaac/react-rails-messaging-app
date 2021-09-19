@@ -59,7 +59,7 @@ export default class Messages extends React.Component {
                         <button className="back-button" onClick={this.handleClick}>⇠</button>
                     </div>
 
-                    <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" />
+                    <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
 
                     <div className="participants">
                         {messages.map(message => {
