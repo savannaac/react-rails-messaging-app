@@ -6,13 +6,35 @@ body {
 h1 {
   color: #FFFFFF;
   font-family: futura;
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-style: italic;
   font-weight: bolder;
+  margin: 0 auto;
+
+  line-height: .9;
+  text-align: center;
+  writing-mode: horizontal-lr;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 h2 {
   font-weight: 700;
+}
+
+h3 {
+  color: #FFFFFF;
+  font-family: futura;
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: bolder;
+  /* margin: 0 auto; */
+
+  line-height: .9;
+  text-align: center;
+  writing-mode: vertical-lr;
 }
 
 ul.message-list {
@@ -73,7 +95,8 @@ ul.conversations-list {
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
   0 10px 10px rgba(0,0,0,0.22);
-  margin: 10%;
+  margin: 30%;
+  margin-top: 3%;
   padding: 1rem;
 }
 
@@ -149,11 +172,11 @@ ul.conversations-list {
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
   0 10px 10px rgba(0,0,0,0.22);
-  margin: 10%;
+  margin: 0 auto;
   opacity: .75;
   padding: 2rem;
   text-align: left;
-  width: 40%;
+  width: 30%;
 }
 
 /* profile component  */
@@ -280,15 +303,19 @@ a.conversations {
 }
 
 .message-input-field {
+  color: #FFFFFF;
+  background-color: #000000;
   border-color: #AAB7B8;
   border-radius: 5px;
   margin-right: .3rem;
-  padding: .3rem;
+  padding: .4rem;
   width: 87%;
 }
 
 .message-send-button {
+  background-color: #000000;
   border-radius: 20px;
+  color: #D6FF10;
   font-size: 1.1rem;
   padding: .1rem;
   width: 7%;

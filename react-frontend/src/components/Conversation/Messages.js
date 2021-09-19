@@ -52,44 +52,48 @@ export default class Messages extends React.Component {
         const messages = this.state;
 
         return (
-            <div className="app-container">
-                <ul className="message-list">
+            <div>
+                <h3 className="rotate">Chit</h3><h3>Chat</h3>
 
-                    <div className="buttons-row">
-                        <button className="back-button" onClick={this.handleClick}>⇠</button>
-                    </div>
+                <div className="app-container">
+                    <ul className="message-list">
 
-                    <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
+                        <div className="buttons-row">
+                            <button className="back-button" onClick={this.handleClick}>⇠</button>
+                        </div>
 
-                    <div className="participants">
+                        <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
+
+                        <div className="participants">
+                            {messages.map(message => {
+                                return (
+                                    <li>
+                                        <div className="message-sender-list">{message.userId}</div>
+                                    </li>
+                                );
+                            })}
+                        </div>
+
                         {messages.map(message => {
                             return (
                                 <li>
-                                    <div className="message-sender-list">{message.userId}</div>
+                                    <div className="message-sender">{message.userId}</div>
+                                    <div className="message-body">{message.body}</div>
+                                    <div className="message-timestamp">{message.createdAt}</div>
                                 </li>
                             );
                         })}
-                    </div>
+                    </ul>
 
-                    {messages.map(message => {
-                        return (
-                            <li>
-                                <div className="message-sender">{message.userId}</div>
-                                <div className="message-body">{message.body}</div>
-                                <div className="message-timestamp">{message.createdAt}</div>
-                            </li>
-                        );
-                    })}
-                </ul>
-
-                <div className="message-submit-container">
-                    <form onSubmit={this.handleSubmit}>
-                        <input className="message-input-field" type="text" name="body" placeholder="" value={this.state.body} onChange={this.handleChange} />
+                    <div className="message-submit-container">
+                        <form onSubmit={this.handleSubmit}>
+                            <input className="message-input-field" type="text" name="body" placeholder="" value={this.state.body} onChange={this.handleChange} />
         
-                        <button className="message-send-button" type="submit">⇢</button>
-                    </form>
+                            <button className="message-send-button" type="submit">⇢</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+                </div>
         );
     };
 }

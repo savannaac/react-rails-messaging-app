@@ -16,20 +16,24 @@ export default class Profile extends React.Component {
 
     render() {
         return (
-            <div className="profile-container">
+            <div>
+                <h3 className="rotate">Chit</h3><h3>Chat</h3>
 
-                <div className="buttons-row">
-                    <button className="exit-button" onClick={this.handleClick}>x</button>
-                </div>
+                <div className="profile-container">
 
-                <img className="avatar" src={this.state.avatar} alt="user-avatar" />
+                    <div className="buttons-row">
+                        <button className="exit-button" onClick={this.handleClick}>x</button>
+                    </div>
 
-                <div className="profile">
-                    <p className="profile-username">{this.state.username}</p>
-                    <p className="profile-createdAt">member since: {this.state.createdAt}</p>
-                    <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
-                </div>
+                    <img className="avatar" src={this.state.avatar} alt="user-avatar" />
+
+                    <div className="profile">
+                        <p className="profile-username">{this.state.username}</p>
+                        <p className="profile-createdAt">member since: {this.state.createdAt}</p>
+                        <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
+                    </div>
               
+                </div>
             </div>
         );
     }

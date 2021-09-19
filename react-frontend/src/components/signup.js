@@ -32,7 +32,7 @@ export default class Signup extends React.Component {
     render() {
         return (
             <div>
-                <h1>ChitChat</h1>
+            	<h1 className="rotate">Chit</h1><h1>Chat</h1>
               <div className="signup-login-form-card">
                 <h2>sign up</h2>
                 <form className="signup-login-form" onSubmit={this.handleSubmit}>
