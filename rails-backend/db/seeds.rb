@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# User.create(username: "Ziggy", email: "ziggy@gmail.com", password: "12345")
+# User.create(username: "Shawn", email: "shawn@gmail.com", password: "12345")
+# User.create(username: "Amanda", email: "amanda@gmail.com", password: "12345")
+
+# Conversation.create(name: "<3")
+# Conversation.create
+
+# Participation.create(user_id: 1, conversation_id: 1)
+# Participation.create(user_id: 2, conversation_id: 1)
+# Participation.create(user_id: 1, conversation_id: 2)
+# Participation.create(user_id: 3, conversation_id: 2)
+# Participation.create(user_id: 1, conversation_id: 3)
+# Participation.create(user_id: 4, conversation_id: 3)
+
+# Message.create(user_id: 1, conversation_id: 1, body: "Hi,")
+# Message.create(user_id: 2, conversation_id: 1, body: "Hi, woof")
+# Message.create(user_id: 1, conversation_id: 1, body: "I love you")
+# Message.create(user_id: 1, conversation_id: 2, body: "biffle-c")
+# Message.create(user_id: 3, conversation_id: 2, body: "best frends club")
+# Message.create(user_id: 1, conversation_id: 3, body: "plants plants plants")
+# Message.create(user_id: 4, conversation_id: 3, body: "we love plants plants plants")

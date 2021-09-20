@@ -2,6 +2,7 @@ import React from "react";
 
 export default class Login extends React.Component {
     state = {
+        currentUser: null, 
         email: "",
         password: ""
     };
@@ -27,15 +28,9 @@ export default class Login extends React.Component {
         .then(data => {
             console.log(data)
 
-            const jwt = data.headers.get("Authorization").split("Bearer")[1];
-            localStorage.setItem("jwt", jwt)
-            // localStorage.setItem("token", data.jwt)
-            // // this.handleLogin(data.user)
-            // // this.setUser(data)
-            // this.setState({
-            //     email: "",
-            //     password: ""
-            // })
+            this.setState({
+                currentUser: data.user,
+            }, localStorage.setItem("token", data.jwt))
         })
     }
 

@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # devise_for :users
   namespace :api do
     namespace :v1 do
-      devise_for :users, controllers: {
-        registrations: "api/v1/registrations",
-        sessions: "api/v1/sessions",
-        # :passwords => "api/#{version}/users/passwords"
-      }
+      # devise_for :users, controllers: {
+      #   registrations: "api/v1/registrations",
+      #   sessions: "api/v1/sessions",
+      #   # :passwords => "api/#{version}/users/passwords"
+      # }
       
       resources :users
       resources :messages
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
       get "/user-data", to: "users#show"
       post "/login", to: "users#create"
+      post "logout", to: "users#destroy"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
