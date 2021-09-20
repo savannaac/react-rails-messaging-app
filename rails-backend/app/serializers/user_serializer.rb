@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-    has_many :conversations
-    has_many :messages, through: :conversations
-
-    attributes :id, :username, :email, :created_at, :updated_at
+    attributes :id, :username, :email, :created_at, :updated_at, :conversations
+    
+    def conversations
+        ActiveModelSerializers::SerializableResource.new(object.conversations, each_serializer: ConversationSerializer)
+    end
 end
