@@ -9,7 +9,7 @@ h1 {
   font-size: 5rem;
   font-style: italic;
   font-weight: bolder;
-  margin: 0 auto;
+  margin: 1.5rem auto;
 
   line-height: .9;
   text-align: center;
@@ -91,7 +91,7 @@ ul.conversations-list {
 /* registration */
 
 .signup-login-form-card {
-  background-color: #FFFFFF;
+  background-color: #FFFF;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
   0 10px 10px rgba(0,0,0,0.22);
@@ -167,6 +167,18 @@ ul.conversations-list {
   margin-top: -1rem;
 }
 
+.add-user {
+  background-color: #000000;
+  border: 0;
+  color: #D6FF10;
+  font-size: 5rem;
+  font-family: futura, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 19rem;
+  vertical-align: middle;
+}
+
 .app-container {
   background-color: #000000;
   border-radius: 10px;
@@ -226,16 +238,6 @@ p.profile-createdAt {
 p.profile-updatedAt {
   margin-top: -1rem;
   color: #FFFFFF;
-}
-
-.add-user {
-  color: #D6FF10;
-  font-size: 5rem;
-  font-family: futura, sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  line-height: 20rem;
-  vertical-align: middle;
 }
 
 /* conversations component  */

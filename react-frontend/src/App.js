@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import ReactDOM from 'react-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import CreateProfile from './components/User/CreateProfile';
 import Profiles from './components/User/Profiles';
 import Conversations from './components/Participation/Conversations';
 import Messages from './components/Conversation/Messages';
@@ -27,7 +28,8 @@ class App extends React.Component {
       <div className="App">
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/profiles" component={Profiles} />
+        <Route exact path="/createprofile" component={CreateProfile} />
+        <Route exact path="/" component={Profiles} />
         {/* <Route exact path={"/conversations"} component={() => (<Conversations conversations={this.state.conversations} />)} /> */}
         {/* do same for profile */}
         <Route exact path="/conversations" component={Conversations} />
