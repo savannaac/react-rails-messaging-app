@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import CreateProfile from './components/User/CreateProfile';
 import Profiles from './components/User/Profiles';
+import CreateConversation from './components/Participation/CreateConversation';
 import Conversations from './components/Participation/Conversations';
 import Messages from './components/Conversation/Messages';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -32,6 +33,7 @@ class App extends React.Component {
         <Route exact path="/" component={Profiles} />
         {/* <Route exact path={"/conversations"} component={() => (<Conversations conversations={this.state.conversations} />)} /> */}
         {/* do same for profile */}
+        <Route exact path="/createconversation" component={CreateConversation} />
         <Route exact path="/conversations" component={Conversations} />
         <Route exact path="/messages" component={Messages} />
       </div>

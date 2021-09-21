@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :participations
 
       get "/user-data", to: "users#show"
+      # get "/users", to: "users#index"
       post "/login", to: "users#create"
       post "logout", to: "users#destroy"
     end

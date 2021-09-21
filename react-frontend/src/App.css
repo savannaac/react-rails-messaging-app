@@ -90,7 +90,7 @@ ul.conversations-list {
 
 /* registration */
 
-.signup-login-form-card {
+.create-form-card {
   background-color: #FFFF;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -100,7 +100,7 @@ ul.conversations-list {
   padding: 1rem;
 }
 
-.signup-login-form {
+.create-form {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -194,6 +194,8 @@ ul.conversations-list {
 /* profile component  */
 .card-container {
   display: flex;
+  justify-content: center;
+  /* flex-direction: row; */
   margin: 2rem;
 }
 
@@ -241,6 +243,10 @@ p.profile-updatedAt {
 }
 
 /* conversations component  */
+
+.users-list {
+  margin-bottom: 1rem;
+}
 
 .convo-icon {
   display: block;

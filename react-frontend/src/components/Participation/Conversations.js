@@ -14,8 +14,20 @@ export default class Conversations extends React.Component {
                 this.setState({ user: data.user, conversations: data.user.conversations })
         // console.log(this.state)
         });
-  };
+    };
 
+    handleClick = (e) => {
+        e.preventDefault();
+        let route = "/";
+        this.props.history.push(route)
+    }
+
+    handleAdd = (e) => {
+        e.preventDefault();
+        let route = "/";
+        this.props.history.push(route)  
+    }
+  
     // state = [
     //     {
     //         userId: "Ziggy",

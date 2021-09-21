@@ -31,9 +31,9 @@ export default class CreateProfile extends React.Component {
         return (
             <div>
             	<h1 className="rotate">Chit</h1><h1>Chat</h1>
-              <div className="signup-login-form-card">
+              <div className="create-form-card">
                 <h2 className="profile">add profile</h2>
-                <form className="signup-login-form" onSubmit={this.handleSubmit}>
+                <form className="create-form" onSubmit={this.handleSubmit}>
                     <input className="input-field" type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
                     <input className="input-field" type="text" name="avatar_url" placeholder="avatar url" value={this.state.avatar_url} onChange={this.handleChange} />
 

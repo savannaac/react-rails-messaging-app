@@ -3,6 +3,8 @@ class Api::V1::UsersController < ApplicationController
 
     def index
         users = User.all.order(updated_at: :DESC)
+
+        render json: users
     end
 
     def create

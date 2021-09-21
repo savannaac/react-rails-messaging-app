@@ -8,20 +8,20 @@ export default class Profiles extends React.Component {
   };
 
   componentDidMount() {
-    return fetch("http://localhost:3000/api/v1/users/1")
-      .then(res => res.json())
-      .then(data => {
-        // console.log(data)
-        this.setState({ user: data.user, conversations: data.user.conversations })
-        // console.log(this.state)
-    });
-  };
+    return fetch("http://localhost:3000/api/v1/users")
+        .then(res => res.json())
+        .then(data => {
+    // console.log(data)
+            this.setState({ users: data })
+    // console.log(this.state)
+        });
+};
 
     handleClick = (e) => {
       e.preventDefault();
       let route = "/createprofile";
       this.props.history.push(route)
-  }
+    }
 
   render() {
     const profiles = this.state.user
@@ -47,10 +47,8 @@ export default class Profiles extends React.Component {
                 {/* <p className="profile-username">{profiles.username}</p> */}
                 {/* <p className="profile-updatedAt">last active: {this.state.updatedAt}</p> */}
               {/* </div> */}
-            </div>
           </div>
 
-          // {/* TODO create user component */}
           {/* Link login component to this card, change to say create a profile instead of login */}
           <div className="profile-container">
             <div className="profile">
@@ -59,6 +57,8 @@ export default class Profiles extends React.Component {
           </div>
 
         </div>
+
+      </div>
     );
   }
 }
