@@ -32,30 +32,21 @@ export default class Profiles extends React.Component {
         <h3 className="rotate">Chit</h3><h3>Chat</h3>
 
         <div className="card-container">
-          <div className="profile-container">
-            {/* TODO link up other users to profile cards */}
-            {/* TODO profile cards open conversation page for each user onclick */}
-
-            {/* <img className="avatar" src={profiles.avatar_url} alt="user-avatar" /> */}
-              {/* main */}
-              {/* <div className="profile">
-                {profiles.map(profile => {
-                  return (
-
-                  );
-                })} */}
-                {/* <p className="profile-username">{profiles.username}</p> */}
-                {/* <p className="profile-updatedAt">last active: {this.state.updatedAt}</p> */}
-              {/* </div> */}
-          </div>
-
-          {/* Link login component to this card, change to say create a profile instead of login */}
+            {this.state.users.map((user) => {
+              return (
+                <div className="profile-container">
+                  <img className="avatar" src={user.avatar_url} alt="user-avatar" />
+                  <p className="profile-username">{user.username}</p>
+                  <p className="profile-updatedAt">last active: {user.updated_at}</p>
+                </div>
+              );
+            })}
+            
           <div className="profile-container">
             <div className="profile">
               <button className="add-user" onClick={this.handleClick}>+</button>
             </div>
           </div>
-
         </div>
 
       </div>

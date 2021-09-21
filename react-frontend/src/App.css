@@ -194,6 +194,7 @@ ul.conversations-list {
 /* profile component  */
 .card-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   /* flex-direction: row; */
   margin: 2rem;
@@ -221,7 +222,7 @@ ul.conversations-list {
 .avatar {
   border-radius: 50%;
   height: auto;
-  width: 50%;
+  width: 7rem;
 }
 
 p.profile-username {
@@ -238,8 +239,9 @@ p.profile-createdAt {
 }
 
 p.profile-updatedAt {
-  margin-top: -1rem;
   color: #FFFFFF;
+  margin-bottom: 1 rem;
+  margin-top: -1rem;
 }
 
 /* conversations component  */

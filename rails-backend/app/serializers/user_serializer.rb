@@ -5,4 +5,8 @@ class UserSerializer < ActiveModel::Serializer
     def conversations
         ActiveModelSerializers::SerializableResource.new(object.conversations, each_serializer: ConversationSerializer)
     end
+
+    # def updated_at
+    #     attributes['updated_at'].strftime("%Y-%m-%d")
+    # end
 end

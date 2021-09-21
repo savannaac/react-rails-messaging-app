@@ -25,6 +25,7 @@ export default class CreateProfile extends React.Component {
             username: "",
             avatar_url: ""
         });
+        this.props.history.push('/')
     };
 
     render() {
