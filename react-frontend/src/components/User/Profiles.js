@@ -2,7 +2,7 @@ import React from "react";
 // import PlusIcon from '../../'
 
 
-export default class Profile extends React.Component {
+export default class Profiles extends React.Component {
   state = {
       username: "Sav",
       avatar: "https://i.ibb.co/kXC4Z2R/65136031766-8-BA4-B1-A2-1-C09-492-D-945-B-736-F9-AC31200.jpg",
@@ -19,7 +19,8 @@ export default class Profile extends React.Component {
   render() {
     return (
       <div>
-          <h3 className="rotate">Chit</h3><h3>Chat</h3>
+        <h3 className="rotate">Chit</h3><h3>Chat</h3>
+
         <div className="card-container">
           <div className="profile-container">
             {/* <div className="buttons-row">
@@ -31,7 +32,6 @@ export default class Profile extends React.Component {
               {/* Savanna */}
               <div className="profile">
                 <p className="profile-username">{this.state.username}</p>
-                <p className="profile-createdAt">member since: {this.state.createdAt}</p>
                 <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
               </div>
             </div>
@@ -45,7 +45,6 @@ export default class Profile extends React.Component {
 
             <div className="profile">
               <p className="profile-username">User 2</p>
-              <p className="profile-createdAt">member since: {this.state.createdAt}</p>
               <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
             </div>
           </div>
@@ -59,7 +58,6 @@ export default class Profile extends React.Component {
 
             <div className="profile">
               <p className="profile-username">User 3</p>
-              <p className="profile-createdAt">member since: {this.state.createdAt}</p>
               <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
             </div>
           </div>
@@ -73,7 +71,6 @@ export default class Profile extends React.Component {
 
             <div className="profile">
               <p className="profile-username">User 4</p>
-              <p className="profile-createdAt">member since: {this.state.createdAt}</p>
               <p className="profile-updatedAt">last active: {this.state.updatedAt}</p>
             </div>
           </div>

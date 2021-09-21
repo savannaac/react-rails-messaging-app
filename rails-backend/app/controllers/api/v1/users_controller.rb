@@ -1,6 +1,10 @@
 class Api::V1::UsersController < ApplicationController
     # before_action :authenticate_api_v1_user!, only: [:show]
 
+    def index
+        users = User.all.order(updated_at: :DESC)
+    end
+
     def create
         user = User.new(user_params)
 
@@ -31,7 +35,8 @@ class Api::V1::UsersController < ApplicationController
 
     private
 
-    # def user_params
-    #     params.require(:user).permit(:username, :email, :password)
-    # end
+    def user_params
+        # params.require(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :avatar_url)
+    end
 end
