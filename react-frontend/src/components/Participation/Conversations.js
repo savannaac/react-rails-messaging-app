@@ -42,6 +42,8 @@ export default class Conversations extends React.Component {
         // console.log(this.state)
         const conversations = this.state.conversations
         console.log(conversations)
+        const messages = conversations.messages
+        console.log(messages)
 
         return (
             <div>
@@ -66,8 +68,8 @@ export default class Conversations extends React.Component {
                                 <li>
                                     <div className="conversation">
                                         <div className="conversation-list"><a className="conversations" href="">{conversation.name}</a></div>
-                                        {/* <div className="message-preview">{conversation}</div>
-                                        <div className="message-preview-date">{conversation}</div> */}
+                                        {/* <div className="message-preview">{conversation.messages[-1].body}</div> */}
+                                        {/* <div className="message-preview-date">{conversation}</div> */}
                                     </div>
                                 </li>
                             );
