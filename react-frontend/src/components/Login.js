@@ -1,8 +1,8 @@
 import React from "react";
 
 export default class Login extends React.Component {
-    state = {
-        currentUser: null, 
+    state = { 
+        currentUser: null,
         email: "",
         password: ""
     };
@@ -16,7 +16,7 @@ export default class Login extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state)
-        return fetch("http://127.0.0.1:3000/api/v1/users", {
+        return fetch("http://127.0.0.1:3000/api/v1/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -27,10 +27,9 @@ export default class Login extends React.Component {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-
             this.setState({
                 currentUser: data.user,
-            }, localStorage.setItem("token", data.jwt))
+            }, localStorage.setItem("token", data.token))
         })
     }
 

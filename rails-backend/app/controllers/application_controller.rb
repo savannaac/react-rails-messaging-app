@@ -8,19 +8,26 @@ class ApplicationController < ActionController::API
     # def updated_at
     #     attributes['updated_at'].strftime("%Y-%m-%d %H:%M")
     # end
-    
 
-    # def encode(payload)
-    #     JsonWebToken.encode(payload)
-    # end
+    def jwt_key
+        ENV['SESSION_SECRET']
+    end
 
-    # def decode(token)
-    #     JsonWebToken.decode(token)
-    # end
+    def encode(payload)
+        JWT.encode(payload, jwt_key, "HS256")
+    end
 
-    # protected
+    def decode(token)
+        JWT.decode(token, jwt_key, true, { :algorithm => "HS256" })
+    end
 
-    # def configure_permitted_parameters
-    #     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    # end
+    def token
+        request.headers["Authorization"]
+    end
+
+    protected
+
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    end
 end

@@ -24,7 +24,7 @@ export default class Conversations extends React.Component {
 
     handleAdd = (e) => {
         e.preventDefault();
-        let route = "/";
+        let route = "/createconversation";
         this.props.history.push(route)  
     }
   
@@ -65,7 +65,7 @@ export default class Conversations extends React.Component {
 
                         <div className="buttons-row">
                             <button className="back-button" onClick={this.handleClick}>⇠</button>
-                            <button className="add-convo-button">+</button>
+                            <button className="add-convo-button" onClick={this.handleAdd}>+</button>
                         </div>
 
                         <img className="convo-icon" src="https://i.ibb.co/RH8B5Qk/Screen-Shot-2021-09-19-at-1-24-24-AM.png" alt="conversation-icon" />

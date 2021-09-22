@@ -7,6 +7,26 @@ class Api::V1::UsersController < ApplicationController
         render json: users
     end
 
+    def login 
+        user = User.find_by(email: params[:email])
+
+        if user && user.authenticate(params[:password])
+            payload = { user_id: user.id }
+            token = encode(payload)
+
+            render json: { user: user, token: token }
+        else 
+            render json: { error: "ooops, something went wrong :(" }
+        end
+    end
+
+    def token_authenticate 
+        token = request.headers["Authenticate"]
+        user = User.find(decode(token)["user_id"])
+
+        render json: user
+    end
+
     def create
         user = User.new(user_params)
 
@@ -38,7 +58,7 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-        # params.require(:user).permit(:username, :email, :password)
-        params.require(:user).permit(:username, :avatar_url)
+        params.require(:user).permit(:username, :email, :avatar_url, :password)
+        # params.require(:user).permit(:username, :avatar_url)
     end
 end
