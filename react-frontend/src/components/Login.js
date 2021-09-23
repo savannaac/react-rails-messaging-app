@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux"
+import { ActionCreators } from "../Actions/User";
 
 export default class Login extends React.Component {
     state = { 
-        currentUser: null,
+        // currentUser: null,
         email: "",
         password: ""
     };
