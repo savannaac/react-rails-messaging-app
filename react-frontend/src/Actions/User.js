@@ -2,7 +2,7 @@
 // import { Types } from "../Constants/Types";
 
 import { userConstants } from "../Constants/UserConstants";
-// user api
+import { userService} from "../Services/UserService"
 import { Alerts } from "./Alerts";
 
 export const User = {
@@ -42,7 +42,7 @@ function getAll() {
                 users => dispatch(success(users)),
                 error => { 
                     dispatch(failure(error))
-                    dispatch(alertActions.error(error))
+                    dispatch(Alerts.error(error))
                 }
             );
     };
