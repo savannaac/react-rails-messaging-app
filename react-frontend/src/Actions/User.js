@@ -4,6 +4,7 @@
 import { userConstants } from "../Constants/UserConstants";
 import { userService} from "../Services/UserService"
 import { Alerts } from "./Alerts";
+import { history } from "../Helpers/history";
 
 export const User = {
     login,
@@ -19,7 +20,7 @@ function login(email, password) {
             .then(
                 user => {
                     dispatch(success(user))
-                    this.props.history.push("/")
+                    history.push("/")
                 },
                 error => {
                     dispatch(failure(error))

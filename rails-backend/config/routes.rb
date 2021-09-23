@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # devise_for :users
   namespace :api do
     namespace :v1 do
-      # devise_for :users, controllers: {
-      #   registrations: "api/v1/registrations",
-      #   sessions: "api/v1/sessions",
-      #   # :passwords => "api/#{version}/users/passwords"
-      # }
+      devise_for :users, controllers: {
+        registrations: "api/v1/registrations",
+        sessions: "api/v1/sessions",
+        # :passwords => "api/#{version}/users/passwords"
+      }
       
       resources :users
       resources :messages

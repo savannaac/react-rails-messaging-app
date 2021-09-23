@@ -42,11 +42,11 @@ export default class Profiles extends React.Component {
               );
             })}
             
-          <div className="profile-container">
+          {/* <div className="profile-container">
             <div className="profile">
               <button className="add-user" onClick={this.handleClick}>+</button>
             </div>
-          </div>
+          </div> */}
         </div>
 
       </div>

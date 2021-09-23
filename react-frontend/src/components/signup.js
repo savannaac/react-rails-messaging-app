@@ -5,6 +5,7 @@ export default class Signup extends React.Component {
     state = {
         username: "",
         email: "",
+        avatar_url: "",
         password: ""
     };
 
@@ -25,19 +26,22 @@ export default class Signup extends React.Component {
         this.setState({
             username: "",
             email: "",
+            avatar_url: "",
             password: ""
         });
+        this.props.history.push('/')
     };
 
     render() {
         return (
             <div>
             	<h1 className="rotate">Chit</h1><h1>Chat</h1>
-              <div className="signup-login-form-card">
+              <div className="create-form-card">
                 <h2>sign up</h2>
-                <form className="signup-login-form" onSubmit={this.handleSubmit}>
+                <form className="create-form" onSubmit={this.handleSubmit}>
                     <input className="input-field" type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
                     <input className="input-field" type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+                    <input className="input-field" type="text" name="avatar_url" placeholder="avatar url" value={this.state.avatar_url} onChange={this.handleChange} />
                     <input className="input-field" type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
 
                     <button className="signup-login-button" type="submit">sign up</button>

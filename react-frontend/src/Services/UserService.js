@@ -6,23 +6,24 @@ export const userService = {
     logout
 }; 
 
-function login(user) {
+function login(email, password) {
     const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            user: {
-                email: user.email,
-                password: user.password,
-            }
-        })
+        body: JSON.stringify({ email, password })
+        // body: JSON.stringify({
+        //     user: {
+        //         email: user.email,
+        //         password: user.password,
+        //     }
+        // })
     };
     return fetch("http://localhost:3000/api/v1/login", requestOptions)
         .then(res => res.json())
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(user));
-            this.props.history.push("/")
+            localStorage.setItem("user", JSON.stringify(user));
+            return user;
         });
 }
 

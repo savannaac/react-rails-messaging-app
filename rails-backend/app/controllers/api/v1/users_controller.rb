@@ -32,10 +32,10 @@ class Api::V1::UsersController < ApplicationController
 
         if user.save
             render json: user, status: 200
-            # payload = { "user_id": user.id }
-            # token = encode(payload)
+            payload = { user_id: user.id }
+            token = encode(payload)
 
-            # render json: { user, token: token }, status: 200
+            render json: { user: UserSerializer.new(user), jwt: token }, status: 200
         else 
             render json: { errors: user.errors.full_messages.join(" ") }
         end

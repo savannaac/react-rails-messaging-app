@@ -1,15 +1,20 @@
 import logo from './logo.svg';
 import ReactDOM from 'react-dom';
-import Login from './components/Login';
+import React from 'react';
+
+import { Login }  from './components/Login';
 import Signup from './components/Signup';
 import CreateProfile from './components/User/CreateProfile';
 import Profiles from './components/User/Profiles';
 import CreateConversation from './components/Participation/CreateConversation';
 import Conversations from './components/Participation/Conversations';
 import Messages from './components/Conversation/Messages';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+
+import { BroserRouter, Route } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import './App.css';
+import { history } from './Helpers/history';
+import { Alerts } from './Actions/Alerts';
 
 class App extends React.Component {
   // state = {}
@@ -37,12 +42,25 @@ class App extends React.Component {
   //     })
   //   }
   // }
+//   constructor(props) {
+//     super(props);
+
+//     const { dispatch } = this.props;
+//     history.listen((location, action) => {
+//         // clear alert on location change
+//         dispatch(Alerts.clear());
+//     });
+// }
 
   render() {
     return (
       <div className="App">
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
+        {/* <Router history={history}> */}
+          {/* <div> */}
+            <Route exact path="/login" component={Login} />
+          {/* </div> */}
+        {/* </Router> */}
         <Route exact path="/createprofile" component={CreateProfile} />
         <Route exact path="/" component={Profiles} />
         {/* <Route exact path={"/conversations"} component={() => (<Conversations conversations={this.state.conversations} />)} /> */}
@@ -55,4 +73,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

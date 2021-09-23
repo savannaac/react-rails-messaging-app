@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { History } from 'history';
-// import { createStore, applyMiddleware } from 'redux';
-// import { Provider } from 'react-redux';
-// import { ThunkMiddleware } from 'redux-thunk';
+import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from './Store/Store';
 
 import './index.css';
 import App from './App';
@@ -12,10 +10,10 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={Store}>
-      <Router>
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </Router>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
@@ -25,3 +23,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
