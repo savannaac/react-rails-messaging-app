@@ -1,56 +1,39 @@
 import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom'
+import { createMessage } from "../../Actions/Message"
 
-export default class Messages extends React.Component {
-    state = [
-        {
-            userId: "no-name says:",
-            body: "testing - 1, 2, 3",
-            createdAt: "1PM"
-        },
-        {
-            userId: "yes-name says:",
-            body: "pls work pls work pls work",
-            createdAt: "1:05PM"
-        },
-        {
-            userId: "user-3 says:",
-            body: "OH MY GAWD",
-            createdAt: "1:10PM"
-        }
-    ]
+class Messages extends React.Component {
 
-    // state = {
-    //     body: ""
-    // }
+    state = {
+        body: ""
+    }
 
-    // handleClick = (e) => {
-    //     e.preventDefault();
-    //     let route = "/conversations";
-    //     history.push(route)
-    // }
+    handleClick = (e) => {
+        e.preventDefault();
+        let route = "/profile";
+        this.props.history.push(route)
+    }
 
     handleChange = (e) => {
         this.setState({
-            [e.target.body]: e.target.value
+            [e.target.name]: e.target.value
         });
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
-        fetch("", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(this.state)
-        });
+        this.props.createMessage({message: {
+            user_id: this.props.user.id,
+            conversation_id: this.props.conversation.id,
+            body: this.state.body }})
         this.setState({
             body: ""
         });
     };
 
     render() {
-        const messages = this.state;
-
+        console.log(this.state)
         return (
             <div>
                 <h3 className="rotate">Chit</h3><h3>Chat</h3>
@@ -65,21 +48,21 @@ export default class Messages extends React.Component {
                         <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
 
                         <div className="participants">
-                            {messages.map(message => {
+                            {this.props.conversation.messages.map(message => {
                                 return (
                                     <li>
-                                        <div className="message-sender-list">{message.userId}</div>
+                                        <div className="message-sender-list">{message.other_participants}</div>
                                     </li>
                                 );
                             })}
                         </div>
 
-                        {messages.map(message => {
+                        {this.props.conversation.messages.map(message => {
                             return (
                                 <li>
-                                    <div className="message-sender">{message.userId}</div>
+                                    <div className="message-sender">{message.screen_name}</div>
                                     <div className="message-body">{message.body}</div>
-                                    <div className="message-timestamp">{message.createdAt}</div>
+                                    <div className="message-timestamp">{message.created_at}</div>
                                 </li>
                             );
                         })}
@@ -97,3 +80,12 @@ export default class Messages extends React.Component {
         );
     };
 }
+
+const mapStateToProps = state => {
+    return{
+        conversation: state.currentConversation,
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, {createMessage})(withRouter(Messages))

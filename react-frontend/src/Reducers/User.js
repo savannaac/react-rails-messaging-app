@@ -1,42 +1,35 @@
-// import { Types } from "../Constants/Types";
+import { userConstants } from "../Constants/UserConstants";
 
-// const initialState = {
-//     user: {
-//         username: "",
-//         email: "",
-//         avatar: ""
-//     } 
-// };
+const initialState = {
+    user: {
+        id: "",
+        username: "",
+        email: "",
+        avatar: ""
+    } 
+};
 
-// const reducer = (state = initialState, action) => {
-//     switch (action.type) {
-//         case Types.LOGIN:
-//             console.log("login", action.payload.user)
-//             return {
-//                 ...state, 
-//                 user: action.payload.user
-//             };
-//         case Types.ADD_USER:
-//             return {
-//                 ...state,
-//                 user: action.payload.user
-//             };
-//         case Types.UPDATE_USER:
-//             return {
-//                 ...state,
-//                 user: action.payload.user
-//             };
-//         case Types.UPDATE_AVATAR:
-//             return {
-//                 ...state,
-//                 user: {
-//                     ...state.user,
-//                     avatar: action.payload.avatar
-//                 }
-//             };
-//         default: 
-//             return state;
-//     }
-// }
-
-// export default reducer
+export default function user(state = initialState, action) {
+    switch (action.type) {
+    case userConstants.LOGIN_REQUEST:
+        return {
+            loggingIn: true,
+        };
+    case userConstants.LOGIN_SUCCESS:
+        return {
+            id: action.user.id,
+            username: action.user.username,
+            avatar_url: action.user.avatar_url,
+            email: action.user.email
+        };
+    case 'USER_SET':
+        return {
+            id: action.user.id,
+            username: action.user.username,
+            avatar_url: action.user.avatar_url,
+            email: action.user.email
+        };
+    default:
+        return state;
+    }
+}

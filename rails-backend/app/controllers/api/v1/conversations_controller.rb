@@ -1,23 +1,19 @@
 class Api::V1::ConversationsController < ApplicationController
-    before_action :set_conversation, only: [:show, :create, :edit, :update, :destroy]
-
-    def index
-        # conversations = Conversation.all.order("updated_at DESC")
-        conversations = current_user.conversations
-        render json: conversations
-    end
 
     def show
-    end
-    
-    def edit
+        conversation = Conversation.find(params[:id])
+        render json: { conversation: ConversationSerializer.new(conversation) }
     end
 
     def create
-        conversation = Conversation.new
+        conversation = Conversation.create(name: conversation_params[:name])
+        Participation.create(conversation_id: conversation.id, user_id: conversation_params[:participant_id])
+        Participation.create(conversation_id: conversation.id, user_id: conversation_params[:user_id])
+        Message.create(conversation_id: conversation.id, body: conversation_params[:message], user_id: conversation_params[:user_id])
 
         if conversation.save
-            render json: conversation
+            render json: { user: UserSerializer.new(User.find(conversation_params[:user_id]))}
+
         else
             render json: { errors: conversation.errors.full_messages.join(" ") }
         end
@@ -39,11 +35,7 @@ class Api::V1::ConversationsController < ApplicationController
 
     private
 
-    def set_conversation
-        conversation = Conversation.find(params[:id])
-    end
-
     def conversation_params
-        params.require(:conversation).permit(:name, :body)
+        params.require(:conversation).permit(:name, :user_id, :participant_id, :message)
     end
 end

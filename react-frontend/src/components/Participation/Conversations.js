@@ -26,28 +26,7 @@ export default class Conversations extends React.Component {
         e.preventDefault();
         let route = "/createconversation";
         this.props.history.push(route)  
-    }
-  
-    // state = [
-    //     {
-    //         userId: "Ziggy",
-    //         name: "<3",
-    //         preview: "I love you. I miss you. I can't wait to see you",
-    //         updatedAt: "everyday"
-    //     },
-    //     {
-    //         userId: "shawn",
-    //         name: "title",
-    //         preview: "frends frends frends",
-    //         updatedAt: "2day"
-    //     },
-    //     {
-    //         userId: "amanda",
-    //         name: "title",
-    //         preview: "friends friends friends",
-    //         updatedAt: "today"
-    //     }
-    // ]
+
     
     render() {
         // console.log(this.props.conversations)
@@ -75,13 +54,12 @@ export default class Conversations extends React.Component {
                         })} */}
                         
                         {conversations.map(conversation => {
-                            // own component
                             return (
                                 <li>
                                     <div className="conversation">
                                         <div className="conversation-list"><a className="conversations" href="">{conversation.name}</a></div>
-                                        {/* <div className="message-preview">{conversation.messages[-1].body}</div> */}
-                                        {/* <div className="message-preview-date">{conversation}</div> */}
+                                        <div className="message-preview">{conversation.messages[-1].body}</div> */}
+                                        <div className="message-preview-date">{conversation}</div>
                                     </div>
                                 </li>
                             );

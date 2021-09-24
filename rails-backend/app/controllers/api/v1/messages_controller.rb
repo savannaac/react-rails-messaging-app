@@ -15,11 +15,11 @@ class Api::V1::MessagesController < ApplicationController
 
     def create
         # puts params.inspect
-        conversation = Conversation.find_or_create(params[:conversation_id])
-        message = Message.new(conversation_id: conversation.id, message_params)
+        conversation = Conversation.find(message_params[:conversation_id])
+        message = Message.new(message_params)
 
         if message.save
-            render json: message
+            render json: {conversation: ConversationSerializer.new(conversation)}
         else
             render json: { errors: message.errors.full_messages.join(" ") }
         end

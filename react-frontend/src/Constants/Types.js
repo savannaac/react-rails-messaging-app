@@ -1,9 +1,0 @@
-// export const Types = {
-//     LOADING_USER: "LOADING_USER",
-//     SET_USER: "SET_USER",
-//     LOGIN: "LOGIN",
-//     ADD_USER: "ADD_USER",
-//     UPDATE_USER: "UPDATE_USER",
-//     UPDATE_AVATAR: "UPDATE_AVATAR",
-//     FORM_SUBMISSION_STATUS: "FORM_SUBMISSION_STATUS"
-// }

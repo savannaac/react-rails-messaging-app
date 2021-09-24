@@ -1,33 +1,31 @@
 class ApplicationController < ActionController::API
-    # before_action :configure_permitted_parameters, if: :devise_controller?
-
-    # def created_at
-    #     attributes['created_at'].strftime("%Y-%m-%d %H:%M")
-    # end
-
-    # def updated_at
-    #     attributes['updated_at'].strftime("%Y-%m-%d %H:%M")
-    # end
-
-    def jwt_key
-        ENV['SESSION_SECRET']
+    def encode_token(payload)
+        JWT.encode(payload, 'sav')
     end
 
-    def encode(payload)
-        JWT.encode(payload, jwt_key)
-    end
-
-    def decode(token)
-        JWT.decode(token, jwt_key, true, { :algorithm => "HS256" })
-    end
-
-    def token
+    def auth_header
         request.headers["Authorization"]
     end
 
-    protected
+    def decoded_token
+        if auth_header
+            token = auth_header.split(" ")[1]
+            begin
+                JWT.decode(token, 'sav', true, { :algorithm => "HS256" })
+            rescue JWT::DecodeError
+                nil
+            end
+        end
+    end
 
-    def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    def current_user
+        if decoded_token
+            user_id = decoded_token[0]['user_id']
+            @user = User.find_by(id: user_id)
+        end
+    end
+
+    def logged_in?
+        !!current_user
     end
 end

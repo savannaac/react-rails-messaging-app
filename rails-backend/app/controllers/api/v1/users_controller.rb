@@ -8,47 +8,17 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def login 
-        user = User.find_by(email: params[:email])
+        user = User.find_by(email: user_params[:email])
 
-        if user && user.authenticate(params[:password])
-            payload = { user_id: user.id }
-            token = encode(payload)
-
-            render json: { user: user, token: token }
+        if user
+            render json: { user: UserSerializer.new(user), jwt: encode_token({user_id: user.id})}
         else 
             render json: { error: "ooops, something went wrong :(" }
         end
     end
 
-    def token_authenticate 
-        token = request.headers["Authenticate"]
-        user = User.find(decode(token)["user_id"])
-
-        render json: user
-    end
-
-    def create
-        user = User.new(user_params)
-
-        if user.save
-            render json: user, status: 200
-            payload = { user_id: user.id }
-            token = encode(payload)
-
-            render json: { user: UserSerializer.new(user), jwt: token }, status: 200
-        else 
-            render json: { errors: user.errors.full_messages.join(" ") }
-        end
-    end
-
-    def new
-        user = User.new
-    end
-
-    def show
-        user = User.find_by(id: params[:id])
-
-        render json: { user: UserSerializer.new(user)}
+    def profile
+        render json: { user: UserSerializer.new(current_user)}
     end
 
     def destroy

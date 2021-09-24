@@ -52,4 +52,4 @@ export default class Profiles extends React.Component {
       </div>
     );
   }
-}
+} 

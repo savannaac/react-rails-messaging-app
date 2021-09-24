@@ -1,16 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"
-import { User } from "../Actions/User";
+import { login } from "../Actions/User";
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            email: "",
-            password: "",
-            submitted: false
+            email: "guest",
+            password: "guest",
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -25,18 +24,10 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        this.setState({ submitted: true });
-        const { email, password } = this.state;
-        const { dispatch } = this.props;
-        if (email && password) {
-            dispatch(User.login(email, password));
-        }
+        this.props.login(this.state, this.props.history);
     }
 
     render() {
-        // const { loggingIn } = this.props;
-        // const { email, password, submitted } = this.state;
         return (
             <div>
                 <h1 className="rotate">Chit</h1><h1>Chat</h1>
@@ -55,13 +46,5 @@ class Login extends React.Component {
         );
     };
 }
-function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
-    return {
-        loggingIn
-    };
-}
-// export default connect(null, mapStateToProps)(withRouter(Login));
 
-const connectedLogin = connect(mapStateToProps)(withRouter(Login));
-export { connectedLogin as Login }; 
+export default connect(null, {login})(withRouter(Login))

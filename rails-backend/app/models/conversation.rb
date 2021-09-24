@@ -3,7 +3,7 @@ class Conversation < ApplicationRecord
     has_many :users, through: :participations
     has_many :messages, dependent: :destroy
 
-    # def other_participants
-    #     users.name.where.not(id: id)
-    # end
+    def other_participants
+        users.map(&:username)
+    end
 end

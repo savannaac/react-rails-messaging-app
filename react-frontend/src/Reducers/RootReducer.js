@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { alert } from "./Alert";
-import { authentication } from "./Authentication";
-import { users } from "./Users";
+import user from "./User";
+import conversations from "./Conversations";
+import currentConversation from "./CurrentConversation";
 
 export const rootReducer = combineReducers({
-    alert: alert,
-    authentication: authentication, 
-    users: users
+    user: user,
+    conversations: conversations,
+    currentConversation: currentConversation
 })

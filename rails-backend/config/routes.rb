@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get "/user-data", to: "users#show"
       # get "/users", to: "users#index"
       post "/login", to: "users#login"
-      get "/login", to: "users#token_authenticate"
+      get "/profile", to: "users#profile"
       post "logout", to: "users#destroy"
     end
   end

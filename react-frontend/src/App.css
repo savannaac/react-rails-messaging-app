@@ -191,7 +191,12 @@ ul.conversations-list {
   width: 30%;
 }
 
-/* profile component  */
+/* profile component */
+.user-profile-container {
+  
+}
+
+/* profiles component  */
 .card-container {
   display: flex;
   flex-wrap: wrap;
