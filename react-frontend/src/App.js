@@ -24,3 +24,9 @@ class App extends React.Component {
 }
 
 export default withRouter(App);
+
+// React Assessment
+
+// schedule 1-on-1 with Matthew to walk through code flow before 
+// KNOW AND TALK THROUGH CODE SLOWLY - PROUD & CONFIDENTLY
+// moves unused code & files into "refactor" folder to clean up 

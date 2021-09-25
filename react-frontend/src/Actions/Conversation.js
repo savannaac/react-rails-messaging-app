@@ -9,9 +9,11 @@ export function createConversation(data, history) {
         return fetch("http://localhost:3000/api/v1/conversations", requestOptions)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 const user = data.user
                 dispatch({type: 'CONVERSATION_CREATED', user})
-                history.push(`/conversation/${user.conversations[user.conversations.length - 1].id}`)
+                // history.push(`/conversation/${user.conversations[user.conversations.length - 1].id}`)
+                history.push("/messages")
             });
     }
 }
