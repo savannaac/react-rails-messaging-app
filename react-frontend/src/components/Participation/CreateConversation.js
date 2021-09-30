@@ -1,5 +1,5 @@
 import React from "react";
-import { createConversation } from '../../Actions/Conversation'
+import { createConversation } from '../../Redux/Actions/Conversation'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"
 

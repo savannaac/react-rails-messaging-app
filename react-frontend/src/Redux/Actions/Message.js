@@ -11,7 +11,7 @@ export function createMessage(data) {
             .then(data => {
                 console.log(data)
                 const conversation = data.conversation
-                dispatch({type: 'MESSAGE_CREATED', conversation})
+                dispatch({ type: 'MESSAGE_CREATED', conversation })
             });
-    }
+    };
 }

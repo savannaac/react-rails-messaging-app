@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
-import { createMessage } from "../../Actions/Message"
+import { createMessage } from "../../Redux/Actions/Message"
 
 class Messages extends React.Component {
 

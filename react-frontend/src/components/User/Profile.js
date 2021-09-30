@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
-import { currentUser } from '../../Actions/User'
-import { getConversation } from '../../Actions/Conversation'
 import { Header } from '../Header'
 import { AddConvoButton } from "../ConvoButton";
+import { currentUser } from '../../Redux/Actions/User'
+import { getConversation } from '../../Redux/Actions/Conversation'
 import { ConversationPreview } from "../ConversationPreview"
 
 
