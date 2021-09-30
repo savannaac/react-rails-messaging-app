@@ -1,5 +1,7 @@
 import React from "react";
 
+// NOT IN USE
+
 export default class Conversations extends React.Component {
     // replace fake data with real data, then do same with profile (pass user )
     state = {

@@ -5,5 +5,5 @@ export const Header = () => {
             <h3>Chat</h3>
         </div>
 
-    )
-}
+    );
+};

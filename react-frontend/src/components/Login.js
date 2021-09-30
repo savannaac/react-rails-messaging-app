@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"
 import { login } from "../Redux/Actions/User";
+import { MainHeader} from "../components/Stateless/MainHeader"
 
 class Login extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="rotate">Chit</h1><h1>Chat</h1>
+                <MainHeader />
 
                 <div className="create-form-card">
                     <h2>login</h2>
