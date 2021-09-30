@@ -23,6 +23,33 @@ export function login(data, history) {
     }
 }
 
+export function signup(data, history) {
+    const requestOptions = {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: {
+          username: data.username,
+          email: data.email,
+          avatar_url: data.avatar_url,
+          password: data.password
+        }
+      })
+    };
+    return dispatch => {
+      return fetch("http://localhost:3000/api/v1/users", requestOptions)
+        .then(res => res.json())
+        .then(data => {
+          const user = data.user;
+          localStorage.token = data.jwt
+          dispatch({ type: "USER_SET", user: user })
+          history.push("/profile")
+        });
+    };
+}
+
 export function currentUser(history){
     const token = localStorage.token;
     const reqObj = {
@@ -42,7 +69,7 @@ export function currentUser(history){
           })
           .catch(error => {
             alert("Please Provide Valid Credentials");
-            history.push("/login");
+            history.push("/");
           });
       };
 }

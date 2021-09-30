@@ -13,7 +13,7 @@ export function createConversation(data, history) {
                 const user = data.user
                 dispatch({ type: 'CONVERSATION_CREATED', user })
                 // history.push(`/conversation/${user.conversations[user.conversations.length - 1].id}`)
-                history.push("/messages")
+                history.push("/profile")
             });
     };
 }

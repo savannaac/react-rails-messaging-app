@@ -45,17 +45,20 @@ class Profile extends React.Component {
                         <button className="add-convo-button" onClick={this.handleAdd}>+</button>
                     </div> */}
 
-                    <img className="convo-icon" src={this.props.user.avatar_url} alt="user-avatar" />
+                    <img className="avatar-icon" src={this.props.user.avatar_url} alt="user-avatar" />
                     <p className="profile-username">{this.props.user.username}</p>
 
 
                     {this.props.conversations.map(conversation => {
                         // <ConversationPreview conversation={conversation}/>
                         return (
-                            <li>
-                                <a className="conversation" onClick={(e) => this.handleClick(e, conversation.id)}>
+                            <li className="conversation">
+                                <a onClick={(e) => this.handleClick(e, conversation.id)}>
                                     <div className="conversation-list"><a className="conversations">{this.conversationTitle(conversation)}</a></div>
-                                    <div className="message-preview">{conversation.messages[conversation.messages.length - 1].body}</div>
+                                    <div className="message-preview-details">
+                                        <div className="message-preview">{conversation.messages[conversation.messages.length - 1].body}</div>
+                                        <div className="message-preview-date">{conversation.messages[conversation.messages.length - 1].created_at}</div>
+                                    </div>
                                 </a>
                             </li>
                         );

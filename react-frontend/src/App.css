@@ -122,6 +122,21 @@ ul.conversations-list {
   padding: 1rem;
 }
 
+p.sign-up {
+  color: #AAB7B8;
+  font-family: futura, sans-serif;
+  font-size: .9rem;
+}
+
+a.sign-up {
+  color: #AAB7B8;
+  text-decoration: none; 
+}
+
+a.sign-up:hover {
+  color: #FF9D00; 
+}
+
 /* buttons */
 
 .buttons-row {
@@ -191,11 +206,6 @@ ul.conversations-list {
   width: 30%;
 }
 
-/* profile component */
-.user-profile-container {
-  
-}
-
 /* profiles component  */
 .card-container {
   display: flex;
@@ -236,6 +246,7 @@ p.profile-username {
   font-family: futura, sans-serif;
   font-style: italic;
   font-weight: bold;
+  text-align: center;
 }
 
 p.profile-createdAt {
@@ -249,17 +260,19 @@ p.profile-updatedAt {
   margin-top: -1rem;
 }
 
-/* conversations component  */
+/* conversations/conversation list component  */
 
 .users-list {
   margin-bottom: 1rem;
 }
 
-.convo-icon {
+.avatar-icon {
+  border-radius: 50%;
   display: block;
+  height: auto;
   margin: 0 auto;
-  margin-bottom: 2rem;
-  width: 20%;
+  margin-bottom: 1rem;
+  width: 11rem;
 }
 
 .conversation {
@@ -271,6 +284,13 @@ a.conversations {
   color: #FF9D00;
   font-weight: 600;
   text-decoration: none;
+}
+
+.message-preview-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: .1rem;
 }
 
 .message-preview {

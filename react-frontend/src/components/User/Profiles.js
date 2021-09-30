@@ -1,5 +1,5 @@
 import React from "react";
-// import PlusIcon from '../../'
+// NOT IN USE
 
 
 export default class Profiles extends React.Component {

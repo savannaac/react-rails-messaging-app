@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable,
   :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
-  has_secure_password
+  # has_secure_password
 
   has_many :messages
   has_many :participations, dependent: :destroy

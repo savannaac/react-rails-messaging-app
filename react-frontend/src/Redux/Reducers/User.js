@@ -5,7 +5,7 @@ const initialState = {
         id: "",
         username: "",
         email: "",
-        avatar: ""
+        avatar_url: ""
     } 
 };
 
