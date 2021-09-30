@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
-import { Header } from '../Header'
-import { AddConvoButton } from "../ConvoButton";
+import { Header } from '../Stateless/Header'
+import { AddConvoButton } from "../Stateless/ConvoButton";
 import { currentUser } from '../../Redux/Actions/User'
 import { getConversation } from '../../Redux/Actions/Conversation'
-import { ConversationPreview } from "../ConversationPreview"
+import { ConversationPreview } from "../Stateless/ConversationPreview"
 
 
 class Profile extends React.Component {
