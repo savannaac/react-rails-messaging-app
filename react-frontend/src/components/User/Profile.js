@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import { Header } from '../Stateless/Header'
-import { AddConvoButton } from "../Stateless/ConvoButton";
-import { currentUser } from '../../Redux/Actions/User'
+import { AddConvoButton } from "../Stateless/AddConvoButton";
+import { LogoutButton } from "../Stateless/LogoutButton";
+import { currentUser, logout } from '../../Redux/Actions/User'
 import { getConversation } from '../../Redux/Actions/Conversation'
-import { ConversationPreview } from "../Stateless/ConversationPreview"
+// import { ConversationPreview } from "../Stateless/ConversationPreview"
 
 
 class Profile extends React.Component {
@@ -19,6 +20,12 @@ class Profile extends React.Component {
         e.preventDefault();
         let route = "/create_conversation";
         this.props.history.push(route)  
+    }
+
+    handleLogOut = () => {
+        this.props.logout();
+        let route = "/";
+        this.props.history.push(route)
     }
 
 	conversationTitle = conversation => {
@@ -40,10 +47,10 @@ class Profile extends React.Component {
             <div className="app-container">
                 <ul className="conversations-list">
 
-                    <AddConvoButton handleAdd={this.handleAdd}/>
-                    {/* <div className="buttons-row">
-                        <button className="add-convo-button" onClick={this.handleAdd}>+</button>
-                    </div> */}
+                    <div className="buttons-row">
+                        <AddConvoButton handleAdd={this.handleAdd} />
+                        <LogoutButton handleLogOut={this.handleLogOut} />
+                    </div>
 
                     <img className="avatar-icon" src={this.props.user.avatar_url} alt="user-avatar" />
                     <p className="profile-username">{this.props.user.username}</p>
@@ -79,4 +86,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {currentUser, getConversation})(withRouter(Profile))
+export default connect(mapStateToProps, {currentUser, getConversation, logout})(withRouter(Profile))

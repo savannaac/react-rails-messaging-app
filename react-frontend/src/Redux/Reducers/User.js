@@ -29,6 +29,10 @@ export default function user(state = initialState, action) {
             avatar_url: action.user.avatar_url,
             email: action.user.email
         };
+    case userConstants.LOGOUT:
+        return {
+            isLoggedIn: false,
+        };
     default:
         return state;
     }

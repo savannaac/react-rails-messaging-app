@@ -73,3 +73,12 @@ export function currentUser(history){
           });
       };
 }
+
+export const logout = () => (dispatch) => {
+  localStorage.clear();
+  return dispatch({ type: "USERS_LOGOUT" });
+}
+// export function logout(dispatch) {
+//   localStorage.clear();
+//   return dispatch({ type: "USERS_LOGOUT" });
+// }
