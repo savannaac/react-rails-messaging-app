@@ -63,6 +63,7 @@ class Profile extends React.Component {
                                 <a onClick={(e) => this.handleClick(e, conversation.id)}>
                                     <div className="conversation-list"><a className="conversations">{this.conversationTitle(conversation)}</a></div>
                                     <div className="message-preview-details">
+                                        <img className="message-avatar" src={conversation.messages[conversation.messages.length -1].sender_avatar} alt="user-avatar" />
                                         <div className="message-preview">{conversation.messages[conversation.messages.length - 1].body}</div>
                                         <div className="message-preview-date">{conversation.messages[conversation.messages.length - 1].created_at}</div>
                                     </div>

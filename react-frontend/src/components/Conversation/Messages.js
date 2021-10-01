@@ -40,15 +40,19 @@ class Messages extends React.Component {
                 <h3 className="rotate">Chit</h3><h3>Chat</h3>
 
                 <div className="app-container">
-                    <ul className="message-list">
-
                         <div className="buttons-row">
                             <BackButton handleClick={this.handleClick} />
                         </div>
 
-                        <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
+                        <div className="participants-avatars">
+                            {this.props.conversation.messages.map(message => {
+                                return (
+                                    <img className="sender-avatar" src={message.sender_avatar} alt="message-sender-avatar" />
+                                );
+                            })}
+                        </div>
 
-                        <div className="participants">
+                        {/* <div className="participants">
                             {this.props.conversation.messages.map(message => {
                                 return (
                                     <li>
@@ -56,8 +60,8 @@ class Messages extends React.Component {
                                     </li>
                                 );
                             })}
-                        </div>
-
+                        </div> */}
+                    <ul className="message-list">
                         {this.props.conversation.messages.map(message => {
                             return (
                                 <li>

@@ -7,4 +7,8 @@ class Message < ApplicationRecord
     def screen_name
         user.username
     end
+
+    def sender_avatar
+        user.avatar_url
+    end
 end

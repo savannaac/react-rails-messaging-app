@@ -290,30 +290,39 @@ a.conversations {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: .1rem;
+  margin-bottom: .5rem;
+}
+
+.message-avatar {
+  border-radius: 50%;
+  height: auto;
+  margin-top: .3rem;
+  width: 3rem;
 }
 
 .message-preview {
   color: #FFFFFF;
-  margin-bottom: .1rem;
-  margin-left: .4rem;
   font-size: .9rem;
 }
 
 .message-preview-date {
   color: #839192;
   font-size: .8rem;
-  margin-bottom: .5rem;
-  margin-left: .1rem;
   text-align: right;
 }
 
 /* messages component  */
+.participants-avatars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
 
-.messages-icon {
-  display: block;
-  margin: 0 auto;
-  width: 20%;
+.sender-avatar {
+  border-radius: 50%;
+  height: auto;
+  width: 9rem;
 }
 
 .participants {
