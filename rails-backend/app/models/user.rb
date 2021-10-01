@@ -15,4 +15,7 @@ class User < ApplicationRecord
   has_many :conversations, through: :participations
 
   validates :username, uniqueness: { case_sensitive: false }
+  validates :email, presence: true
+  validates :avatar_url, presence: true
+  validates :password, presence: true
 end

@@ -14,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: { user: UserSerializer.new(user), jwt: token}
         else
-            render json: { error: "ooops, something went wrong :(" }
+            render json: { errors: user.errors.full_messages.join(" ") }
         end
     end
 
