@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import { createMessage } from "../../Redux/Actions/Message"
+import { BackButton } from "../Stateless/BackButton";
 
 class Messages extends React.Component {
 
@@ -42,7 +43,7 @@ class Messages extends React.Component {
                     <ul className="message-list">
 
                         <div className="buttons-row">
-                            <button className="back-button" onClick={this.handleClick}>⇠</button>
+                            <BackButton handleClick={this.handleClick} />
                         </div>
 
                         <img className="messages-icon" src="https://i.ibb.co/dWCs0Sg/Screen-Shot-2021-09-19-at-1-00-42-AM.png" alt="messages-icon" />
