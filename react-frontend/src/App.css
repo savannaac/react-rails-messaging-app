@@ -368,10 +368,11 @@ a.conversations {
 }
 
 .message-body {
-  background-color: #4D5656;
+  background-color: transparent;
+  border: 1px solid #D6FF10;
   border-radius: 20px;
   color: #FFFFFF;
-  margin-bottom: .1rem;
+  margin-bottom: .2rem;
   padding: .6rem;
   width: auto;
 }
@@ -381,6 +382,7 @@ a.conversations {
   font-size: .8rem;
   margin-bottom: .5rem;
   margin-left: 1rem;
+  text-align: right;
 }
 
 .message-submit-container {
@@ -390,8 +392,8 @@ a.conversations {
 
 .message-input-field {
   color: #FFFFFF;
-  background-color: #000000;
-  border-color: #AAB7B8;
+  background-color: #4D5656;
+  /* border-color: #AAB7B8; */
   border-radius: 5px;
   margin-right: .3rem;
   padding: .4rem;
@@ -401,6 +403,7 @@ a.conversations {
 .message-send-button {
   background-color: #000000;
   border-radius: 20px;
+  border: 1px solid #D6FF10;
   color: #D6FF10;
   font-size: 1.1rem;
   padding: .1rem;
