@@ -21,6 +21,7 @@ h1 {
 }
 
 h2 {
+  font-family: futura, sans-serif;
   font-weight: 700;
 }
 
@@ -35,6 +36,12 @@ h3 {
   line-height: .9;
   text-align: center;
   writing-mode: vertical-lr;
+}
+
+h4 {
+  color: #D6FF10;
+  font-family: futura, sans-serif;
+  font-weight: 700;
 }
 
 ul.message-list {
@@ -115,9 +122,28 @@ ul.conversations-list {
   text-transform: uppercase;
 }
 
+.create-convo-button {
+  background-color: transparent;
+  border: 1px solid #D6FF10;
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 1rem;
+  width: 40%;
+  margin: auto;
+  text-transform: uppercase;
+}
+
 .input-field {
   background-color: #ededed;
   border: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.input-field-dark {
+  background-color: #000000;
+  border-bottom: 1px solid #D6FF10;
+  color: #FFFFFF;
   margin-bottom: 1rem;
   padding: 1rem;
 }
@@ -147,7 +173,7 @@ a.sign-up:hover {
 }
 
 .back-button {
-  background-color: #000000;
+  background-color: transparent;
   color: #D6FF10;
   border: 0;
   font-size: 1.1rem;
@@ -159,7 +185,7 @@ a.sign-up:hover {
   background-color: #000;
   border: 0;
   font-size: 1rem;
-  margin-top: -1rem;
+  /* margin-top: -1rem; */
 }
 
 .back-button:hover {

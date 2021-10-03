@@ -2,6 +2,7 @@ import React from "react";
 import { createConversation } from '../../Redux/Actions/Conversation'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"
+import { BackButton } from "../Stateless/BackButton";
 
 class CreateConversation extends React.Component {
     state = {
@@ -18,6 +19,12 @@ class CreateConversation extends React.Component {
                 this.setState({ users: data })
             });
     };
+
+    handleClick = (e) => {
+        e.preventDefault();
+        let route = "/profile";
+        this.props.history.push(route)
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -40,8 +47,12 @@ class CreateConversation extends React.Component {
             <div>
             	<h1 className="rotate">Chit</h1><h1>Chat</h1>
 
-                <div className="create-form-card">
-                    <h2 className="profile">add conversation</h2>
+                <div className="app-container">
+                    <div className="buttons-row">
+                            <BackButton handleClick={this.handleClick} />
+                    </div>
+
+                    <h4 className="profile">add conversation</h4>
                     
                     <form className="create-form" onSubmit={this.handleSubmit}>
                         <select 
@@ -54,10 +65,10 @@ class CreateConversation extends React.Component {
                                 return <option value={user.id}>{user.username}</option>;
                             })}
                         </select>
-                        <input className="input-field" type="text" name="name" placeholder="convo name" value={this.state.name} onChange={this.handleChange} />
-                        <input className="input-field" type="text" name="body" placeholder="message" value={this.state.body} onChange={this.handleChange} />
+                        <input className="input-field-dark" type="text" name="name" placeholder="convo name" value={this.state.name} onChange={this.handleChange} />
+                        <input className="input-field-dark" type="text" name="body" placeholder="message" value={this.state.body} onChange={this.handleChange} />
 
-                        <button className="signup-login-button" type="submit">add convo</button>
+                        <button className="create-convo-button" type="submit">chat!</button>
                     </form>
               </div>
 
