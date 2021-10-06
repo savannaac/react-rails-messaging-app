@@ -26,7 +26,7 @@ Start the server
 
  `rails s`
 
-### JavaScript Frontend
+### React Frontend
 Enter the frontend folder
 
  `cd react-frontend`
