@@ -44,12 +44,12 @@ When the page is up and running,
 
 1. Sign up for an account 
 2. On your profile page, start a conversation by selecting "+"
- - pick a user
- - enter your first message
- - click "CHAT!"
+  - pick a user
+  - enter your first message
+  - click "CHAT!"
 3. Conversations are listed on your profile page
 4. Select a conversation
- - on the conversation page, enter a message and send
+  - on the conversation page, enter a message and send
 5. Chat away!
 6. Log out by selecting the "x"
 
