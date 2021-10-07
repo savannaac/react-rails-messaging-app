@@ -1,7 +1,8 @@
 import React from "react";
 import { createConversation } from '../../Redux/Actions/Conversation'
 import { withRouter } from "react-router-dom";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import { MainHeader } from "../Stateless/MainHeader";
 import { BackButton } from "../Stateless/BackButton";
 
 class CreateConversation extends React.Component {
@@ -45,7 +46,7 @@ class CreateConversation extends React.Component {
         console.log(this.state)
         return (
             <div>
-            	<h1 className="rotate">Chit</h1><h1>Chat</h1>
+            	<MainHeader />
 
                 <div className="app-container">
                     <div className="buttons-row">

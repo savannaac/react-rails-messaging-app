@@ -68,7 +68,7 @@ export function currentUser(history){
             history.push("/profile");
           })
           .catch(error => {
-            alert("Please Provide Valid Credentials");
+            alert("oops, let's log in again");
             history.push("/");
           });
       };

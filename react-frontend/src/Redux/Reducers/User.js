@@ -34,6 +34,8 @@ export default function user(state = initialState, action) {
             isLoggedIn: false,
         };
     default:
+        // when reducer doesn't recognize action type or doesn't care about this specific action,
         return state;
+        // return the existing state unchanged
     }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import { createMessage } from "../../Redux/Actions/Message"
+import { Header } from "../Stateless/Header";
 import { BackButton } from "../Stateless/BackButton";
 
 class Messages extends React.Component {
@@ -37,7 +38,7 @@ class Messages extends React.Component {
         console.log(this.state)
         return (
             <div>
-                <h3 className="rotate">Chit</h3><h3>Chat</h3>
+                < Header />
 
                 <div className="app-container">
                         <div className="buttons-row">
@@ -45,7 +46,7 @@ class Messages extends React.Component {
                         </div>
 
                         <div className="participants-avatars">
-                            {this.props.conversation.messages.map(message => {
+                            {this.props.conversation.messages.slice(0, 2).map(message => {
                                 return (
                                     <img className="sender-avatar" src={message.sender_avatar} alt="message-sender-avatar" />
                                 );
