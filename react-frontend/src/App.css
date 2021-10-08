@@ -163,6 +163,28 @@ a.sign-up:hover {
   color: #FF9D00; 
 }
 
+/* search bar */
+
+.search-bar {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-bar-input {
+  background-color: #FFFFFF;
+  border: 2px solid #D6FF10;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.search-submit-button {
+  background-color: transparent; 
+  border: 2px solid #D6FF10;
+  border-radius: 5px;
+}
+
 /* buttons */
 
 .buttons-row {
@@ -302,7 +324,7 @@ p.profile-updatedAt {
 }
 
 .conversation {
-  border-bottom: .1rem solid #EAEAEA;
+  border-bottom: .1rem solid #D6FF10;
   margin-bottom: .7rem;
 }
 

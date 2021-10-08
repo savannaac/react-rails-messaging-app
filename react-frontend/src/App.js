@@ -26,3 +26,7 @@ class App extends React.Component {
 }
 
 export default withRouter(App);
+
+//dynamic search bar by 2AM central
+
+//slack: @juan elias

@@ -11,6 +11,10 @@ import { getConversation } from '../../Redux/Actions/Conversation'
 
 class Profile extends React.Component {
 
+    state = {
+        searchInput: ""
+    }
+
 	handleClick = (e, id) => {
         e.preventDefault();
         this.props.getConversation(id, this.props.history)
@@ -26,6 +30,17 @@ class Profile extends React.Component {
         this.props.logout();
         let route = "/";
         this.props.history.push(route)
+    }
+
+    
+    handleSearch = (e) => {
+        this.setState({ searchInput: e.target.value });
+    }
+    
+    filterResults = () => {
+        this.props.conversations.filter(conversation => {
+            return conversation.messages.body.toLowerCase().includes(this.state.searchInput.toLowerCase());
+        });
     }
 
 	conversationTitle = conversation => {
@@ -45,33 +60,41 @@ class Profile extends React.Component {
         <div>
             <Header />
             <div className="app-container">
-                <ul className="conversations-list">
 
                     <div className="buttons-row">
                         <AddConvoButton handleAdd={this.handleAdd} />
                         <LogoutButton handleLogOut={this.handleLogOut} />
                     </div>
 
+
                     <img className="avatar-icon" src={this.props.user.avatar_url} alt="user-avatar" />
                     <p className="profile-username">{this.props.user.username}</p>
 
 
-                    {this.props.conversations.map(conversation => {
+                    <div className="search-bar">
+                        {/* <form className="search-form" onSubmit={this.getResults}> */}
+                        <input className="search-bar-input" type="text" placeholder="search !" value={this.state.searchInput} onChange={this.handleSearch} />
+                            {/* <button className="search-submit-button" type="submit">🔍</button> */}
+                    </div>
+
+                    <ul className="conversations-list">
+                        {this.props.conversations.map(conversation => {
                         // <ConversationPreview conversation={conversation}/>
-                        return (
-                            <li className="conversation">
-                                <a onClick={(e) => this.handleClick(e, conversation.id)}>
-                                    <div className="conversation-list"><a className="conversations">{this.conversationTitle(conversation)}</a></div>
-                                    <div className="message-preview-details">
-                                        <img className="message-avatar" src={conversation.messages[conversation.messages.length -1].sender_avatar} alt="user-avatar" />
-                                        <div className="message-preview">{conversation.messages[conversation.messages.length - 1].body}</div>
-                                        <div className="message-preview-date">{conversation.messages[conversation.messages.length - 1].created_at}</div>
-                                    </div>
-                                </a>
-                            </li>
-                        );
-                    })}
-                </ul>
+                            return (
+                                <li className="conversation">
+                                    <a onClick={(e) => this.handleClick(e, conversation.id)}>
+                                        <div className="conversation-list"><a className="conversations">{this.conversationTitle(conversation)}</a></div>
+                                            <div className="message-preview-details">
+                                            <img className="message-avatar" src={conversation.messages[conversation.messages.length -1].sender_avatar} alt="user-avatar" />
+                                            <div className="message-preview">{conversation.messages[conversation.messages.length - 1].body}</div>
+                                            <div className="message-preview-date">{conversation.messages[conversation.messages.length - 1].created_at}</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                );
+                            })}
+                        {/* </form> */}
+                    </ul>
             </div>
         </div>
     );
