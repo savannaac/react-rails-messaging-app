@@ -31,15 +31,18 @@ class Profile extends React.Component {
         let route = "/";
         this.props.history.push(route)
     }
-
     
     handleSearch = (e) => {
-        this.setState({ searchInput: e.target.value });
+        // this.setState({ searchInput: e.target.value });
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
     
-    filterResults = () => {
-        this.props.conversations.filter(conversation => {
-            return conversation.messages.body.toLowerCase().includes(this.state.searchInput.toLowerCase());
+    filteredResults = () => {
+        console.log(this.props.conversations)
+        this.props.conversations.filter((conversation) => {
+            return conversation.name.toLowerCase().includes(this.state.searchInput.toLowerCase());
         });
     }
 
@@ -56,6 +59,13 @@ class Profile extends React.Component {
     }
 
   render() {
+    // const filteredConversations =
+    //     this.props.conversations.map((conversation) => {
+    //         return conversation.name.toLowerCase().includes(this.state.searchInput.toLowerCase());
+    //     });
+
+    console.log(this.state)
+    console.log(this.filteredResults())
     return (
         <div>
             <Header />
@@ -72,9 +82,23 @@ class Profile extends React.Component {
 
 
                     <div className="search-bar">
-                        {/* <form className="search-form" onSubmit={this.getResults}> */}
-                        <input className="search-bar-input" type="text" placeholder="search !" value={this.state.searchInput} onChange={this.handleSearch} />
-                            {/* <button className="search-submit-button" type="submit">🔍</button> */}
+                        <form>
+                            <input 
+                                className="search-bar-input" 
+                                type="text" 
+                                placeholder="🔍 search !" 
+                                value={this.state.searchInput} 
+                                onChange={this.handleSearch} 
+                            />
+                        </form>
+                    </div>
+
+                    <div>
+                        {this.props.conversations.map(conversation => {
+                            return (
+                                this.filteredResults(conversation)
+                            );
+                        })}
                     </div>
 
                     <ul className="conversations-list">
@@ -93,7 +117,6 @@ class Profile extends React.Component {
                                 </li>
                                 );
                             })}
-                        {/* </form> */}
                     </ul>
             </div>
         </div>
