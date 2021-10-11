@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import { Header } from '../Stateless/Header'
 import { AddConvoButton } from "../Stateless/AddConvoButton";
+import { SearchButton } from "../Stateless/SearchButton";
 import { LogoutButton } from "../Stateless/LogoutButton";
 import { currentUser, logout } from '../../Redux/Actions/User'
 import { getConversation } from '../../Redux/Actions/Conversation'
@@ -10,11 +11,6 @@ import { getConversation } from '../../Redux/Actions/Conversation'
 
 
 class Profile extends React.Component {
-
-    state = {
-        searchInput: "",
-        // filteredConversations: [this.props.conversations]
-    }
 
 	handleClick = (e, id) => {
         e.preventDefault();
@@ -27,22 +23,16 @@ class Profile extends React.Component {
         this.props.history.push(route)  
     }
 
+    handleSearch = (e) => {
+        e.preventDefault();
+        let route = "/search";
+        this.props.history.push(route)  
+    }
+
     handleLogOut = () => {
         this.props.logout();
         let route = "/";
         this.props.history.push(route)
-    }
-    
-    handleSearch = (e) => {
-        this.setState({ searchInput: e.target.value });
-    }
-    
-    filteredResults = () => {
-        const conversations = this.props.conversations
-        console.log(conversations)
-        conversations.filter((conversation) => {
-            return conversation.name.toLowerCase().includes(this.state.searchInput.toLowerCase());
-        });
     }
 
 	conversationTitle = conversation => {
@@ -58,13 +48,6 @@ class Profile extends React.Component {
     }
 
   render() {
-    // const filteredConversations =
-    //     this.props.conversations.map((conversation) => {
-    //         return conversation.name.toLowerCase().includes(this.state.searchInput.toLowerCase());
-    //     });
-
-    console.log(this.state)
-    console.log(this.filteredResults())
     return (
         <div>
             <Header />
@@ -72,31 +55,13 @@ class Profile extends React.Component {
 
                     <div className="buttons-row">
                         <AddConvoButton handleAdd={this.handleAdd} />
+                        <SearchButton handleSearch={this.handleSearch} />
                         <LogoutButton handleLogOut={this.handleLogOut} />
                     </div>
 
 
                     <img className="avatar-icon" src={this.props.user.avatar_url} alt="user-avatar" />
                     <p className="profile-username">{this.props.user.username}</p>
-
-
-                    <div className="search-bar">
-                        <input 
-                        className="search-bar-input" 
-                        type="text" 
-                        placeholder="🔍 search !" 
-                        value={this.state.searchInput} 
-                        onChange={this.handleSearch} 
-                        />
-                    </div>
-
-                    <div>
-                        {this.props.conversations.map(conversation => {
-                            return (
-                                this.filteredResults(conversation)
-                            );
-                        })}
-                    </div>
 
                     <ul className="conversations-list">
                         {this.props.conversations.map(conversation => {

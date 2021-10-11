@@ -163,7 +163,7 @@ a.sign-up:hover {
   color: #FF9D00; 
 }
 
-/* search bar */
+/* search */
 
 .search-bar {
   margin-bottom: 2rem;
@@ -179,10 +179,21 @@ a.sign-up:hover {
   width: 50%;
 }
 
-.search-submit-button {
-  background-color: transparent; 
-  border: 2px solid #D6FF10;
-  border-radius: 5px;
+.results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.filtered-message {
+  background-color: transparent;
+  border: 1px solid #D6FF10;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-bottom: .8rem;
+  padding: .6rem;
+  width: auto;
 }
 
 /* buttons */
@@ -207,7 +218,7 @@ a.sign-up:hover {
   background-color: #000;
   border: 0;
   font-size: 1rem;
-  /* margin-top: -1rem; */
+  margin-top: -1rem;
 }
 
 .back-button:hover {
@@ -223,6 +234,14 @@ a.sign-up:hover {
 }
 
 .add-convo-button {
+  background-color: #000000;
+  color: #D6FF10;
+  border: 0;
+  font-size: 1.1rem;
+  margin-top: -1rem;
+}
+
+.search-button {
   background-color: #000000;
   color: #D6FF10;
   border: 0;
@@ -249,6 +268,7 @@ a.sign-up:hover {
   0 10px 10px rgba(0,0,0,0.22);
   margin: 0 auto;
   opacity: .75;
+  overflow: scroll;
   padding: 2rem;
   text-align: left;
   width: 30%;
