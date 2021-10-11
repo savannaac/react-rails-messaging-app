@@ -12,7 +12,8 @@ import { getConversation } from '../../Redux/Actions/Conversation'
 class Profile extends React.Component {
 
     state = {
-        searchInput: ""
+        searchInput: "",
+        // filteredConversations: [this.props.conversations]
     }
 
 	handleClick = (e, id) => {
@@ -33,15 +34,13 @@ class Profile extends React.Component {
     }
     
     handleSearch = (e) => {
-        // this.setState({ searchInput: e.target.value });
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+        this.setState({ searchInput: e.target.value });
     }
     
     filteredResults = () => {
-        console.log(this.props.conversations)
-        this.props.conversations.filter((conversation) => {
+        const conversations = this.props.conversations
+        console.log(conversations)
+        conversations.filter((conversation) => {
             return conversation.name.toLowerCase().includes(this.state.searchInput.toLowerCase());
         });
     }
@@ -82,15 +81,13 @@ class Profile extends React.Component {
 
 
                     <div className="search-bar">
-                        <form>
-                            <input 
-                                className="search-bar-input" 
-                                type="text" 
-                                placeholder="🔍 search !" 
-                                value={this.state.searchInput} 
-                                onChange={this.handleSearch} 
-                            />
-                        </form>
+                        <input 
+                        className="search-bar-input" 
+                        type="text" 
+                        placeholder="🔍 search !" 
+                        value={this.state.searchInput} 
+                        onChange={this.handleSearch} 
+                        />
                     </div>
 
                     <div>
