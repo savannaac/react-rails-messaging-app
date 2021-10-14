@@ -233,7 +233,19 @@ a.sign-up:hover {
   color: #FF9D00;  
 }
 
+.delete-convo-button:hover {
+  color: #FF9D00;  
+}
+
 .add-convo-button {
+  background-color: #000000;
+  color: #D6FF10;
+  border: 0;
+  font-size: 1.1rem;
+  margin-top: -1rem;
+}
+
+.delete-convo-button {
   background-color: #000000;
   color: #D6FF10;
   border: 0;

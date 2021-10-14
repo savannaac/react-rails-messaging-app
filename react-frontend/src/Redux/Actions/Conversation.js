@@ -29,3 +29,10 @@ export function getConversation(id, history) {
             });
     }
 }
+
+export const deleteConversation = (id) => (dispatch) => {
+    return dispatch({ 
+        type: "CONVERSATION_DELETE",
+        payload: id
+     });
+}
